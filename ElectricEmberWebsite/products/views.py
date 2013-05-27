@@ -9,4 +9,4 @@ from .models import Products
 def product_page(request):
     queryset = Products.objects.all()
 
-    return render_to_response("results.html", locals(), context_instance=RequestContext(request))
+    return render_to_response("products/index.html", locals(), context_instance=RequestContext(request))
