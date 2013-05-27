@@ -1,8 +1,11 @@
+from unipath import Path
+
 from django.conf.urls import patterns, include, url
 
-# Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
+
+from settings.base import STATIC_ROOT, MEDIA_ROOT
 
 urlpatterns = patterns('',
     # Examples:
@@ -11,6 +14,8 @@ urlpatterns = patterns('',
     #url(r'^$', 'homepage.views.hello', name='home'),
     #url(r'^APP/', include('APP.urls', namespace="APP")),
     url(r'^products/', include('products.urls', namespace="products")),
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': MEDIA_ROOT }),
+    (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': STATIC_ROOT }),
 
     # Use a 32-char randomly generated URL path for the Project Admin
     url(r'^FqA244qADyMjNhZK6wkRDwGu2qTTcjW2/doc/', include('django.contrib.admindocs.urls')),

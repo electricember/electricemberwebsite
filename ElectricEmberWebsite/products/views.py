@@ -7,6 +7,6 @@ from django.shortcuts import render_to_response
 from .models import Products
 
 def product_page(request):
-    products = Products.objects.all()
+    queryset = Products.objects.all()
 
-    return render_to_response("products.html", locals(), context_instance=RequestContext(request))
+    return render_to_response("results.html", locals(), context_instance=RequestContext(request))
