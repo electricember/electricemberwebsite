@@ -6,3 +6,5 @@
 # staging.py - Settings for staging on prod server
 # devDEV_NAME.py - Individual developer settings for DEV_NAME
 # test.py - settings for running tests
+to run the server using a particular settings file use the --settings option like so:
+  ./manage.py runserver --settings=ElectricEmberWebsite.settings.local

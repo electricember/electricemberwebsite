@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+<!-- {% block title %} <p>{{ query }} details</p> {% endblock title %} -->
+
+
+{% block content %}
+
+    <h1>{{ query }}</h1>
+    <img src='/media/{{ query.image1 }}'> <br>
+    <p>{{ query.description }}</p>
+    <p><a href='/products/'>Go Back to Products</a></p>
+
+{% endblock content %}

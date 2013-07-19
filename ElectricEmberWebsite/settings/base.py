@@ -36,7 +36,10 @@ TEMPLATE_DIRS = (
 # Examples: "http://example.com/media/", "http://media.example.com/"
 MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
-#STATICFILES_DIRS = ()
+STATICFILES_DIRS = (
+#    (PROJECT_APPS_DIR.child("static").child("bootstrap").child("js")),
+    PROJECT_APPS_DIR.child("static"),
+)
 
 ADMINS = (
     ('shawn', 'shawn.furyan@gmail.com'),
